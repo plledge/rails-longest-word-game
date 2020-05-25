@@ -1,0 +1,17 @@
+<div>
+  <h1>Game Settings</h1>
+  <p> The goal of this challenge is to write a simplified version of this game from the terminal where:<p>
+<ul>
+<li>You are given a random set of letters.</li>
+<li>You have to enter the longest english word you can find using only letters in the grid.</li>
+<li>After typing your answer, you get your score combined with the time you took, and eventually an error message if you failed.</li>
+<ul>
+  <h2> <%= @letters %> </h2>
+</div>
+
+<form action="/score" method="post">
+  <p> What is the longest word you can find? <p>
+  <input type="text" name="words" placeholder="Type a word">
+  <input type="submit" value="Compute">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
